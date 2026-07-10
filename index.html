@@ -527,6 +527,7 @@
       background: linear-gradient(135deg, rgba(56,189,248,0.03), transparent 60%);
       opacity: 0;
       transition: opacity 0.3s;
+      pointer-events: none;
     }
     .project-card:hover {
       transform: translateY(-6px);
@@ -543,6 +544,8 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
+      position: relative;
+      z-index: 2;
     }
     .project-icon {
       font-size: 1.6rem;

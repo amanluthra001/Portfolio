@@ -642,6 +642,131 @@
       font-size: 0.75rem;
     }
 
+    /* ─── RESUMES ─── */
+    #resumes { background: var(--bg2); }
+    .section-desc-text {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #94a3b8;
+      max-width: 720px;
+      margin-top: -36px;
+      margin-bottom: 44px;
+    }
+    .resumes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+    .resume-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .resume-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+    }
+    .resume-card.ai::before { background: linear-gradient(90deg, var(--accent-blue), var(--accent-violet)); }
+    .resume-card.sde::before { background: linear-gradient(90deg, var(--accent-blue), var(--accent-green)); }
+    .resume-card.ml::before { background: linear-gradient(90deg, var(--accent-green), var(--accent-blue)); }
+    .resume-card.data::before { background: linear-gradient(90deg, var(--accent-violet), var(--accent-orange)); }
+    .resume-card.devops::before { background: linear-gradient(90deg, var(--accent-orange), var(--accent-blue)); }
+    .resume-card.frontend::before { background: linear-gradient(90deg, var(--accent-blue), var(--accent-violet)); }
+    .resume-card.backend::before { background: linear-gradient(90deg, var(--accent-green), var(--accent-orange)); }
+
+    .resume-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(99,179,237,0.3);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.35);
+    }
+    .resume-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+    .resume-icon {
+      font-size: 1.45rem;
+      width: 48px; height: 48px;
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 12px;
+      background: var(--surface2);
+    }
+    .resume-badge {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      padding: 4px 12px;
+      border-radius: 100px;
+      letter-spacing: 0.05em;
+      border: 1px solid;
+    }
+    .badge-blue { border-color: var(--accent-blue); color: var(--accent-blue); background: rgba(56,189,248,0.08); }
+    .badge-violet { border-color: var(--accent-violet); color: var(--accent-violet); background: rgba(167,139,250,0.08); }
+    .badge-green { border-color: var(--accent-green); color: var(--accent-green); background: rgba(52,211,153,0.08); }
+    .badge-orange { border-color: var(--accent-orange); color: var(--accent-orange); background: rgba(251,146,60,0.08); }
+
+    .resume-name {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--text);
+    }
+    .resume-desc {
+      font-size: 0.88rem;
+      line-height: 1.65;
+      color: #94a3b8;
+    }
+    .resume-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: auto;
+    }
+    .resume-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 8px;
+      position: relative;
+      z-index: 2;
+    }
+    .resume-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 11px 18px;
+      background: rgba(56,189,248,0.06);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      font-family: 'DM Mono', monospace;
+      font-size: 0.76rem;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .resume-btn:hover {
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-violet));
+      color: #000;
+      border-color: transparent;
+      box-shadow: 0 0 25px rgba(56,189,248,0.35);
+      transform: translateY(-2px);
+      font-weight: 600;
+    }
+
     /* ─── CONTACT ─── */
     #contact { background: var(--bg); }
     .contact-wrap {
@@ -788,6 +913,7 @@
     <li><a href="#skills">Skills</a></li>
     <li><a href="#dsa">DSA</a></li>
     <li><a href="#projects">Projects</a></li>
+    <li><a href="#resumes">Resumes</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -814,6 +940,7 @@
     </p>
     <div class="hero-ctas fade-in">
       <a href="#projects" class="btn-primary">View Projects</a>
+      <a href="#resumes" class="btn-ghost">View Resumes 📄</a>
       <a href="#contact" class="btn-ghost">Get in Touch</a>
     </div>
   </div>
@@ -1259,10 +1386,187 @@
   </div>
 </section>
 
+<!-- RESUMES -->
+<section id="resumes">
+  <div class="section-header">
+    <span class="section-num">05</span>
+    <h2 class="section-title">Resumes & CVs</h2>
+    <div class="section-line"></div>
+  </div>
+  <p class="section-desc-text">
+    Role-specific resumes tailored for specialized engineering tracks. Review domain-focused experience, key technical capabilities, and direct project impact. Click any card to view or download directly from Google Drive.
+  </p>
+
+  <div class="resumes-grid">
+
+    <!-- 1. AI Resume -->
+    <div class="resume-card ai">
+      <div class="resume-top">
+        <div class="resume-icon">🤖</div>
+        <span class="resume-badge badge-blue">Generative AI</span>
+      </div>
+      <div class="resume-name">AI / GenAI Engineer</div>
+      <div class="resume-desc">
+        Specialized in Generative AI architectures, multi-agent workflows, prompt engineering, and LLM integrations (OpenAI, Claude, Gemini, Vector DBs).
+      </div>
+      <div class="resume-pills">
+        <span class="pill">Prompt Engineering</span>
+        <span class="pill">Agentic Workflows</span>
+        <span class="pill">LLM APIs</span>
+        <span class="pill">Vector DBs</span>
+      </div>
+      <div class="resume-actions">
+        <a href="https://drive.google.com/file/d/1DYoOEV1Tz3qxBtzrwt-2FsT3PxW5sWAQ/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="resume-btn">
+          View AI Resume ↗
+        </a>
+      </div>
+    </div>
+
+    <!-- 2. SDE Resume -->
+    <div class="resume-card sde">
+      <div class="resume-top">
+        <div class="resume-icon">💻</div>
+        <span class="resume-badge badge-green">Core SWE</span>
+      </div>
+      <div class="resume-name">Software Development Engineer (SDE)</div>
+      <div class="resume-desc">
+        Focused on advanced Data Structures & Algorithms, C++, Python, object-oriented software engineering, system design, and competitive coding (LeetCode 1800+).
+      </div>
+      <div class="resume-pills">
+        <span class="pill">DSA (LeetCode 1800+)</span>
+        <span class="pill">C++ & Python</span>
+        <span class="pill">OOP & Systems</span>
+        <span class="pill">Problem Solving</span>
+      </div>
+      <div class="resume-actions">
+        <a href="https://drive.google.com/file/d/1wjs2H1fEcMcrR7T-NtKBlA68IM9en9RQ/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="resume-btn">
+          View SDE Resume ↗
+        </a>
+      </div>
+    </div>
+
+    <!-- 3. Machine Learning Resume -->
+    <div class="resume-card ml">
+      <div class="resume-top">
+        <div class="resume-icon">🔬</div>
+        <span class="resume-badge badge-green">ML & Deep Learning</span>
+      </div>
+      <div class="resume-name">Machine Learning Engineer</div>
+      <div class="resume-desc">
+        Deep learning pipelines, Computer Vision (MobileNetV3, ResNet), Explainable AI (Grad-CAM, LIME), CatBoost, and production model evaluation.
+      </div>
+      <div class="resume-pills">
+        <span class="pill">PyTorch & TorchVision</span>
+        <span class="pill">Computer Vision</span>
+        <span class="pill">CatBoost & Scikit-Learn</span>
+        <span class="pill">Explainable AI</span>
+      </div>
+      <div class="resume-actions">
+        <a href="https://drive.google.com/file/d/19IiB3GaGFZMFz-RyeJ4JPMcHeHWAB6x8/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="resume-btn">
+          View ML Resume ↗
+        </a>
+      </div>
+    </div>
+
+    <!-- 4. Data Analyst Resume -->
+    <div class="resume-card data">
+      <div class="resume-top">
+        <div class="resume-icon">📊</div>
+        <span class="resume-badge badge-violet">Data Analytics</span>
+      </div>
+      <div class="resume-name">Data Analyst</div>
+      <div class="resume-desc">
+        Data wrangling, exploratory data analysis, SQL database querying, statistical modeling, feature engineering, and high-impact visual reporting.
+      </div>
+      <div class="resume-pills">
+        <span class="pill">SQL & Databases</span>
+        <span class="pill">Pandas & NumPy</span>
+        <span class="pill">Statistical Analysis</span>
+        <span class="pill">Matplotlib & Seaborn</span>
+      </div>
+      <div class="resume-actions">
+        <a href="https://drive.google.com/file/d/13Ga7Xc3q1pJGe_aNP-f2bkV-lj5Gi6Yk/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="resume-btn">
+          View Data Analyst Resume ↗
+        </a>
+      </div>
+    </div>
+
+    <!-- 5. DevOps Resume -->
+    <div class="resume-card devops">
+      <div class="resume-top">
+        <div class="resume-icon">🚀</div>
+        <span class="resume-badge badge-orange">Cloud & CI/CD</span>
+      </div>
+      <div class="resume-name">DevOps & Cloud Engineer</div>
+      <div class="resume-desc">
+        Container orchestration with Docker & Compose, automated CI/CD pipelines using Jenkins, Nginx reverse proxies, Linux administration, and Prometheus observability.
+      </div>
+      <div class="resume-pills">
+        <span class="pill">Docker & Compose</span>
+        <span class="pill">Jenkins CI/CD</span>
+        <span class="pill">Prometheus</span>
+        <span class="pill">Linux & Nginx</span>
+      </div>
+      <div class="resume-actions">
+        <a href="https://drive.google.com/file/d/1d9s7KXiSns1Mi-J-QcVEj2ovxXCgc3O3/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="resume-btn">
+          View DevOps Resume ↗
+        </a>
+      </div>
+    </div>
+
+    <!-- 6. Frontend Resume -->
+    <div class="resume-card frontend">
+      <div class="resume-top">
+        <div class="resume-icon">🎨</div>
+        <span class="resume-badge badge-blue">Frontend UI/UX</span>
+      </div>
+      <div class="resume-name">Frontend Developer</div>
+      <div class="resume-desc">
+        Modern user interfaces, responsive design systems, React.js component architectures, JavaScript (ES6+), TypeScript, CSS3, and Vercel cloud deployments.
+      </div>
+      <div class="resume-pills">
+        <span class="pill">React.js</span>
+        <span class="pill">JavaScript & TypeScript</span>
+        <span class="pill">Responsive CSS3</span>
+        <span class="pill">UI/UX Performance</span>
+      </div>
+      <div class="resume-actions">
+        <a href="https://drive.google.com/file/d/1ncvFkpRE4CPx9AxWI3Ub6bZ5E-w3Ari8/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="resume-btn">
+          View Frontend Resume ↗
+        </a>
+      </div>
+    </div>
+
+    <!-- 7. Backend Resume -->
+    <div class="resume-card backend">
+      <div class="resume-top">
+        <div class="resume-icon">🔌</div>
+        <span class="resume-badge badge-green">Backend Architecture</span>
+      </div>
+      <div class="resume-name">Backend Developer</div>
+      <div class="resume-desc">
+        Scalable RESTful API development, JWT & Role-Based Access Control (RBAC), SQL & NoSQL data models (MySQL, MongoDB), and server backends with Node.js & Flask.
+      </div>
+      <div class="resume-pills">
+        <span class="pill">Node.js & Express</span>
+        <span class="pill">Python (Flask)</span>
+        <span class="pill">REST APIs & RBAC</span>
+        <span class="pill">MySQL & MongoDB</span>
+      </div>
+      <div class="resume-actions">
+        <a href="https://drive.google.com/file/d/1OujgxcnYZbgFZTjeOvuSpIswSmSJehO5/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="resume-btn">
+          View Backend Resume ↗
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section id="contact">
   <div class="section-header">
-    <span class="section-num">05</span>
+    <span class="section-num">06</span>
     <h2 class="section-title">Contact</h2>
     <div class="section-line"></div>
   </div>
@@ -1309,6 +1613,7 @@
   <div class="footer-logo">Aman Luthra</div>
   <div class="footer-copy">© 2026 — Designed & Built by Aman Luthra</div>
   <div class="footer-links">
+    <a href="#resumes">Resumes</a>
     <a href="https://github.com/amanluthra001" target="_blank">GitHub</a>
     <a href="https://www.linkedin.com/in/aman-luthra-2a2666286/" target="_blank">LinkedIn</a>
   </div>
